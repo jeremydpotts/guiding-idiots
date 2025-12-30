@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jacksonville State University Component Library - Demo</title>
+  <link rel="stylesheet" href="../css/jsu-theme.css">
+  <link rel="stylesheet" href="../css/jsu-components.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="jsu-nav">
+    <div class="jsu-container" style="display: flex; align-items: center; width: 100%;">
+      <a href="#" class="jsu-nav-brand">JSU</a>
+      <ul class="jsu-nav-links">
+        <li><a href="#home" class="jsu-nav-link active">Home</a></li>
+        <li><a href="#components" class="jsu-nav-link">Components</a></li>
+        <li><a href="#about" class="jsu-nav-link">About</a></li>
+        <li><a href="#contact" class="jsu-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="jsu-hero" id="home">
+    <div class="jsu-container">
+      <h1 class="jsu-hero-title">Go Gamecocks!</h1>
+      <p class="jsu-hero-subtitle">Jacksonville State University Component Library</p>
+      <div class="jsu-hero-actions">
+        <button class="jsu-btn jsu-btn-primary jsu-btn-lg">Get Started</button>
+        <button class="jsu-btn jsu-btn-secondary jsu-btn-lg">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="jsu-container" style="padding-top: 3rem;">
+
+    <!-- Buttons Section -->
+    <section id="components" class="jsu-mb-xl">
+      <h2>Buttons</h2>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+        <button class="jsu-btn jsu-btn-primary">Primary Button</button>
+        <button class="jsu-btn jsu-btn-secondary">Secondary Button</button>
+        <button class="jsu-btn jsu-btn-outline">Outline Button</button>
+        <button class="jsu-btn jsu-btn-ghost">Ghost Button</button>
+        <button class="jsu-btn jsu-btn-primary" disabled>Disabled</button>
+      </div>
+
+      <h3>Button Sizes</h3>
+      <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
+        <button class="jsu-btn jsu-btn-primary jsu-btn-sm">Small</button>
+        <button class="jsu-btn jsu-btn-primary">Medium (Default)</button>
+        <button class="jsu-btn jsu-btn-primary jsu-btn-lg">Large</button>
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="jsu-mb-xl">
+      <h2>Cards</h2>
+      <div class="jsu-grid jsu-grid-3">
+        <div class="jsu-card">
+          <div class="jsu-card-header">
+            <h3 class="jsu-card-title">Standard Card</h3>
+          </div>
+          <div class="jsu-card-body">
+            <p>This is a standard card component with header, body, and footer sections.</p>
+          </div>
+          <div class="jsu-card-footer">
+            <button class="jsu-btn jsu-btn-primary jsu-btn-sm">Action</button>
+          </div>
+        </div>
+
+        <div class="jsu-card jsu-card-red">
+          <div class="jsu-card-header">
+            <h3 class="jsu-card-title">JSU Red Card</h3>
+          </div>
+          <div class="jsu-card-body">
+            <p>A branded card featuring Jacksonville State's official red color.</p>
+          </div>
+          <div class="jsu-card-footer">
+            <button class="jsu-btn jsu-btn-primary jsu-btn-sm">Learn More</button>
+          </div>
+        </div>
+
+        <div class="jsu-card">
+          <div class="jsu-card-body">
+            <h3>Simple Card</h3>
+            <p>Cards don't need headers or footers. This is just a body section.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges Section -->
+    <section class="jsu-mb-xl">
+      <h2>Badges</h2>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <span class="jsu-badge jsu-badge-red">New</span>
+        <span class="jsu-badge jsu-badge-white">Featured</span>
+        <span class="jsu-badge jsu-badge-gray">Draft</span>
+        <span class="jsu-badge jsu-badge-red">Gamecocks</span>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="jsu-mb-xl">
+      <h2>Alerts</h2>
+      <div class="jsu-alert jsu-alert-success">
+        <strong>Success!</strong> Your changes have been saved.
+      </div>
+      <div class="jsu-alert jsu-alert-warning">
+        <strong>Warning!</strong> Please verify your information before submitting.
+      </div>
+      <div class="jsu-alert jsu-alert-error">
+        <strong>Error!</strong> Something went wrong. Please try again.
+      </div>
+      <div class="jsu-alert jsu-alert-info">
+        <strong>Info:</strong> Registration opens on January 15th.
+      </div>
+      <button class="jsu-btn jsu-btn-primary" onclick="JSU.Alert.success('This is a dynamic alert!', 3000)">
+        Show Dynamic Alert
+      </button>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="jsu-mb-xl">
+      <h2>Forms</h2>
+      <form id="demoForm" style="max-width: 600px;">
+        <div class="jsu-form-group">
+          <label class="jsu-form-label" for="name">Full Name</label>
+          <input type="text" id="name" class="jsu-form-input" placeholder="Enter your name" required>
+          <span class="jsu-form-help">Please enter your full legal name</span>
+        </div>
+
+        <div class="jsu-form-group">
+          <label class="jsu-form-label" for="email">Email Address</label>
+          <input type="email" id="email" class="jsu-form-input" placeholder="you@example.com" required>
+        </div>
+
+        <div class="jsu-form-group">
+          <label class="jsu-form-label" for="program">Select Program</label>
+          <select id="program" class="jsu-form-select" required>
+            <option value="">Choose a program...</option>
+            <option value="undergrad">Undergraduate</option>
+            <option value="graduate">Graduate</option>
+            <option value="online">Online Programs</option>
+          </select>
+        </div>
+
+        <div class="jsu-form-group">
+          <label class="jsu-form-label" for="message">Message</label>
+          <textarea id="message" class="jsu-form-textarea" placeholder="Tell us about yourself..." minlength="10"></textarea>
+        </div>
+
+        <div class="jsu-form-group">
+          <div class="jsu-form-check">
+            <input type="checkbox" id="terms" class="jsu-form-check-input" required>
+            <label class="jsu-form-check-label" for="terms">I agree to the terms and conditions</label>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem;">
+          <button type="submit" class="jsu-btn jsu-btn-primary">Submit</button>
+          <button type="button" class="jsu-btn jsu-btn-outline" onclick="JSU.Form.reset(document.getElementById('demoForm'))">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Table Section -->
+    <section class="jsu-mb-xl">
+      <h2>Table</h2>
+      <table class="jsu-table jsu-table-striped">
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Major</th>
+            <th>GPA</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001234</td>
+            <td>John Smith</td>
+            <td>Computer Science</td>
+            <td>3.8</td>
+            <td><span class="jsu-badge jsu-badge-red">Active</span></td>
+          </tr>
+          <tr>
+            <td>002345</td>
+            <td>Sarah Johnson</td>
+            <td>Business Administration</td>
+            <td>3.6</td>
+            <td><span class="jsu-badge jsu-badge-red">Active</span></td>
+          </tr>
+          <tr>
+            <td>003456</td>
+            <td>Mike Davis</td>
+            <td>Engineering</td>
+            <td>3.9</td>
+            <td><span class="jsu-badge jsu-badge-gray">Alumni</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Loading Spinner Section -->
+    <section class="jsu-mb-xl">
+      <h2>Loading Spinners</h2>
+      <div style="display: flex; gap: 2rem; align-items: center;">
+        <div>
+          <p>Small</p>
+          <div class="jsu-spinner jsu-spinner-sm"></div>
+        </div>
+        <div>
+          <p>Medium</p>
+          <div class="jsu-spinner"></div>
+        </div>
+        <div>
+          <p>Large</p>
+          <div class="jsu-spinner jsu-spinner-lg"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Section -->
+    <section class="jsu-mb-xl">
+      <h2>Modal</h2>
+      <button class="jsu-btn jsu-btn-primary" onclick="JSU.Modal.open('exampleModal')">Open Modal</button>
+    </section>
+
+    <!-- Grid Section -->
+    <section class="jsu-mb-xl">
+      <h2>Grid System</h2>
+      <h3>2 Columns</h3>
+      <div class="jsu-grid jsu-grid-2 jsu-mb-lg">
+        <div class="jsu-card jsu-card-body">Column 1</div>
+        <div class="jsu-card jsu-card-body">Column 2</div>
+      </div>
+
+      <h3>3 Columns</h3>
+      <div class="jsu-grid jsu-grid-3 jsu-mb-lg">
+        <div class="jsu-card jsu-card-body">Column 1</div>
+        <div class="jsu-card jsu-card-body">Column 2</div>
+        <div class="jsu-card jsu-card-body">Column 3</div>
+      </div>
+
+      <h3>4 Columns</h3>
+      <div class="jsu-grid jsu-grid-4">
+        <div class="jsu-card jsu-card-body">Column 1</div>
+        <div class="jsu-card jsu-card-body">Column 2</div>
+        <div class="jsu-card jsu-card-body">Column 3</div>
+        <div class="jsu-card jsu-card-body">Column 4</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="jsu-footer">
+    <div class="jsu-container">
+      <div class="jsu-footer-content">
+        <div class="jsu-footer-section">
+          <h4>Jacksonville State University</h4>
+          <p>700 Pelham Road North<br>Jacksonville, AL 36265</p>
+        </div>
+        <div class="jsu-footer-section">
+          <h4>Quick Links</h4>
+          <ul class="jsu-footer-links">
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Academics</a></li>
+            <li><a href="#">Campus Life</a></li>
+            <li><a href="#">Athletics</a></li>
+          </ul>
+        </div>
+        <div class="jsu-footer-section">
+          <h4>Resources</h4>
+          <ul class="jsu-footer-links">
+            <li><a href="#">Student Portal</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Career Services</a></li>
+            <li><a href="#">IT Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="jsu-footer-bottom">
+        &copy; 2025 Jacksonville State University. All rights reserved. | Go Gamecocks!
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Example -->
+  <div id="exampleModal" class="jsu-modal">
+    <div class="jsu-modal-content">
+      <div class="jsu-modal-header">
+        <h3 class="jsu-modal-title">Welcome to JSU!</h3>
+        <button class="jsu-modal-close">&times;</button>
+      </div>
+      <div class="jsu-modal-body">
+        <p>This is a modal dialog showcasing the Jacksonville State University component library.</p>
+        <p>Modals are great for displaying important information, forms, or confirmations without navigating away from the current page.</p>
+      </div>
+      <div class="jsu-modal-footer">
+        <button class="jsu-btn jsu-btn-outline" onclick="JSU.Modal.close('exampleModal')">Cancel</button>
+        <button class="jsu-btn jsu-btn-primary" onclick="JSU.Modal.close('exampleModal')">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/jsu-components.js"></script>
+  <script>
+    // Form validation example
+    document.getElementById('demoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (JSU.Form.validate(this)) {
+        JSU.Alert.success('Form submitted successfully!', 3000);
+        JSU.Form.reset(this);
+      } else {
+        JSU.Alert.error('Please fix the errors in the form', 3000);
+      }
+    });
+  </script>
+</body>
+</html>

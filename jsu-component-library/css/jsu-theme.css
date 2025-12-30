@@ -1,0 +1,155 @@
+/**
+ * Jacksonville State University Theme
+ * Official Brand Colors & Design System
+ *
+ * Primary Color: JSU Red #CC0000
+ * Secondary Color: White #FFFFFF
+ * Mascot: Gamecocks
+ */
+
+:root {
+  /* Official JSU Colors */
+  --jsu-red: #CC0000;
+  --jsu-red-rgb: 204, 0, 0;
+  --jsu-white: #FFFFFF;
+  --jsu-white-rgb: 255, 255, 255;
+
+  /* Extended Palette for UI */
+  --jsu-red-dark: #990000;
+  --jsu-red-darker: #660000;
+  --jsu-red-light: #E63939;
+  --jsu-red-lighter: #FF6666;
+  --jsu-red-pale: #FFE6E6;
+
+  /* Neutral Grays */
+  --jsu-gray-900: #1a1a1a;
+  --jsu-gray-800: #2d2d2d;
+  --jsu-gray-700: #404040;
+  --jsu-gray-600: #666666;
+  --jsu-gray-500: #808080;
+  --jsu-gray-400: #999999;
+  --jsu-gray-300: #cccccc;
+  --jsu-gray-200: #e0e0e0;
+  --jsu-gray-100: #f5f5f5;
+  --jsu-gray-50: #fafafa;
+
+  /* Semantic Colors */
+  --jsu-success: #2d7a2d;
+  --jsu-warning: #cc9900;
+  --jsu-error: var(--jsu-red);
+  --jsu-info: #0066cc;
+
+  /* Typography */
+  --jsu-font-family-primary: 'Helvetica Neue', Arial, sans-serif;
+  --jsu-font-family-heading: 'Georgia', serif;
+  --jsu-font-family-mono: 'Courier New', monospace;
+
+  /* Font Sizes */
+  --jsu-font-size-xs: 0.75rem;
+  --jsu-font-size-sm: 0.875rem;
+  --jsu-font-size-base: 1rem;
+  --jsu-font-size-lg: 1.125rem;
+  --jsu-font-size-xl: 1.25rem;
+  --jsu-font-size-2xl: 1.5rem;
+  --jsu-font-size-3xl: 1.875rem;
+  --jsu-font-size-4xl: 2.25rem;
+  --jsu-font-size-5xl: 3rem;
+
+  /* Spacing */
+  --jsu-spacing-xs: 0.25rem;
+  --jsu-spacing-sm: 0.5rem;
+  --jsu-spacing-md: 1rem;
+  --jsu-spacing-lg: 1.5rem;
+  --jsu-spacing-xl: 2rem;
+  --jsu-spacing-2xl: 3rem;
+  --jsu-spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --jsu-radius-sm: 0.25rem;
+  --jsu-radius-md: 0.5rem;
+  --jsu-radius-lg: 0.75rem;
+  --jsu-radius-xl: 1rem;
+  --jsu-radius-full: 9999px;
+
+  /* Shadows */
+  --jsu-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --jsu-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --jsu-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --jsu-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --jsu-shadow-red: 0 4px 14px 0 rgba(204, 0, 0, 0.3);
+
+  /* Transitions */
+  --jsu-transition-fast: 150ms ease-in-out;
+  --jsu-transition-base: 250ms ease-in-out;
+  --jsu-transition-slow: 350ms ease-in-out;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--jsu-font-family-primary);
+  font-size: var(--jsu-font-size-base);
+  line-height: 1.6;
+  color: var(--jsu-gray-900);
+  background-color: var(--jsu-white);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--jsu-font-family-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--jsu-gray-900);
+  margin-top: 0;
+  margin-bottom: var(--jsu-spacing-md);
+}
+
+h1 { font-size: var(--jsu-font-size-4xl); }
+h2 { font-size: var(--jsu-font-size-3xl); }
+h3 { font-size: var(--jsu-font-size-2xl); }
+h4 { font-size: var(--jsu-font-size-xl); }
+h5 { font-size: var(--jsu-font-size-lg); }
+h6 { font-size: var(--jsu-font-size-base); }
+
+/* Utility Classes */
+.jsu-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--jsu-spacing-lg);
+}
+
+.jsu-text-center { text-align: center; }
+.jsu-text-left { text-align: left; }
+.jsu-text-right { text-align: right; }
+
+.jsu-text-red { color: var(--jsu-red); }
+.jsu-text-white { color: var(--jsu-white); }
+.jsu-text-gray { color: var(--jsu-gray-600); }
+
+.jsu-bg-red { background-color: var(--jsu-red); }
+.jsu-bg-white { background-color: var(--jsu-white); }
+.jsu-bg-gray { background-color: var(--jsu-gray-100); }
+.jsu-bg-dark { background-color: var(--jsu-gray-900); }
+
+.jsu-mb-xs { margin-bottom: var(--jsu-spacing-xs); }
+.jsu-mb-sm { margin-bottom: var(--jsu-spacing-sm); }
+.jsu-mb-md { margin-bottom: var(--jsu-spacing-md); }
+.jsu-mb-lg { margin-bottom: var(--jsu-spacing-lg); }
+.jsu-mb-xl { margin-bottom: var(--jsu-spacing-xl); }
+
+.jsu-mt-xs { margin-top: var(--jsu-spacing-xs); }
+.jsu-mt-sm { margin-top: var(--jsu-spacing-sm); }
+.jsu-mt-md { margin-top: var(--jsu-spacing-md); }
+.jsu-mt-lg { margin-top: var(--jsu-spacing-lg); }
+.jsu-mt-xl { margin-top: var(--jsu-spacing-xl); }
+
+.jsu-p-xs { padding: var(--jsu-spacing-xs); }
+.jsu-p-sm { padding: var(--jsu-spacing-sm); }
+.jsu-p-md { padding: var(--jsu-spacing-md); }
+.jsu-p-lg { padding: var(--jsu-spacing-lg); }
+.jsu-p-xl { padding: var(--jsu-spacing-xl); }

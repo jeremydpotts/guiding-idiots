@@ -26,6 +26,14 @@ This repository serves as a historical record of technical problem-solving discu
   - Walk-forward optimization and out-of-sample validation
   - Configuration examples and deployment notes
 
+- [**jsu-component-library/**](jsu-component-library/) - Jacksonville State University themed UI component library:
+  - Official JSU brand colors and design system (JSU Red #CC0000)
+  - Reusable components: buttons, cards, forms, navigation, modals, tables, alerts
+  - Interactive JavaScript components with validation
+  - Responsive grid system and utilities
+  - Complete documentation and live examples
+  - Ready for integration into student portals, university websites, and applications
+
 ### Planned Content
 
 - Additional technical approaches and solutions
@@ -38,6 +46,12 @@ guiding-idiots/
 ├── README.md                               # This file
 ├── LEAPS_QUANT_TOOL_DISCUSSION.md         # LEAPS quant tool discussion recap
 ├── LEAPS_QUANT_TOOL_SESSION_TRANSCRIPT.md # ChatGPT session export with full codebase
+├── jsu-component-library/                 # JSU themed UI component library
+│   ├── README.md                          # Component library documentation
+│   ├── css/                               # Stylesheets (theme + components)
+│   ├── js/                                # Interactive JavaScript
+│   ├── examples/                          # Live demo page
+│   └── assets/                            # Images, logos, fonts
 └── [Additional documentation as developed]
 ```
 
