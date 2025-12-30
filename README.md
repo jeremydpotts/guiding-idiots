@@ -34,6 +34,18 @@ This repository serves as a historical record of technical problem-solving discu
   - Complete documentation and live examples
   - Ready for integration into student portals, university websites, and applications
 
+- [**Audio Transcription UI**](jsu-component-library/examples/standalone.html) - Interactive transcript viewer for "Guiding Idiots" discussion:
+  - JSU-themed UI with smooth navigation
+  - 6 organized sections: Introduction, Topics, Technical Deep Dive, Solutions, Takeaways, Action Items
+  - Transcribed using OpenAI Whisper
+  - See [TRANSCRIPTION_GUIDE.md](TRANSCRIPTION_GUIDE.md) for setup instructions
+
+### Transcription Tools
+
+- [**transcribe_audio.sh**](transcribe_audio.sh) - Standalone script to transcribe audio files using Whisper
+- [**populate_transcript.sh**](populate_transcript.sh) - Script to populate UI with transcript content
+- [**TRANSCRIPTION_GUIDE.md**](TRANSCRIPTION_GUIDE.md) - Complete guide for audio transcription workflow
+
 ### Planned Content
 
 - Additional technical approaches and solutions
@@ -44,13 +56,21 @@ This repository serves as a historical record of technical problem-solving discu
 ```
 guiding-idiots/
 ├── README.md                               # This file
+├── TRANSCRIPTION_GUIDE.md                  # Audio transcription workflow guide
+├── transcribe_audio.sh                     # Whisper transcription script
+├── populate_transcript.sh                  # UI population script
 ├── LEAPS_QUANT_TOOL_DISCUSSION.md         # LEAPS quant tool discussion recap
 ├── LEAPS_QUANT_TOOL_SESSION_TRANSCRIPT.md # ChatGPT session export with full codebase
+├── transcripts/                            # Audio transcription outputs
+│   ├── Guiding Idiots.txt                 # Plain text transcript
+│   ├── Guiding Idiots.json                # JSON with timestamps
+│   └── Guiding Idiots.srt                 # Subtitle format
 ├── jsu-component-library/                 # JSU themed UI component library
 │   ├── README.md                          # Component library documentation
 │   ├── css/                               # Stylesheets (theme + components)
 │   ├── js/                                # Interactive JavaScript
-│   ├── examples/                          # Live demo page
+│   ├── examples/
+│   │   └── standalone.html                # Audio transcript viewer UI
 │   └── assets/                            # Images, logos, fonts
 └── [Additional documentation as developed]
 ```
