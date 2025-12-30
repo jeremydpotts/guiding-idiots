@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transcript Categories - Guiding Idiots</title>
+  <style>
+    /* JSU Theme Variables */
+    :root {
+      --jsu-red: #CC0000;
+      --jsu-red-rgb: 204, 0, 0;
+      --jsu-white: #FFFFFF;
+      --jsu-red-dark: #990000;
+      --jsu-red-light: #E63939;
+      --jsu-red-pale: #FFE6E6;
+      --jsu-gray-900: #1a1a1a;
+      --jsu-gray-800: #2d2d2d;
+      --jsu-gray-700: #404040;
+      --jsu-gray-600: #666666;
+      --jsu-gray-500: #808080;
+      --jsu-gray-400: #999999;
+      --jsu-gray-300: #cccccc;
+      --jsu-gray-200: #e0e0e0;
+      --jsu-gray-100: #f5f5f5;
+      --jsu-gray-50: #fafafa;
+      --jsu-spacing-xs: 0.25rem;
+      --jsu-spacing-sm: 0.5rem;
+      --jsu-spacing-md: 1rem;
+      --jsu-spacing-lg: 1.5rem;
+      --jsu-spacing-xl: 2rem;
+      --jsu-spacing-2xl: 3rem;
+      --jsu-spacing-3xl: 4rem;
+      --jsu-radius-sm: 0.25rem;
+      --jsu-radius-md: 0.5rem;
+      --jsu-radius-lg: 0.75rem;
+      --jsu-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --jsu-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --jsu-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --jsu-shadow-red: 0 4px 14px 0 rgba(204, 0, 0, 0.3);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--jsu-gray-900);
+      line-height: 1.6;
+      background-color: var(--jsu-gray-50);
+    }
+
+    .jsu-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--jsu-spacing-lg);
+    }
+
+    /* Navigation */
+    .jsu-nav {
+      background-color: var(--jsu-red);
+      padding: var(--jsu-spacing-md) 0;
+      box-shadow: var(--jsu-shadow-md);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .jsu-nav-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--jsu-white);
+      text-decoration: none;
+    }
+
+    .nav-controls {
+      display: flex;
+      gap: var(--jsu-spacing-md);
+      align-items: center;
+    }
+
+    .nav-controls a {
+      color: var(--jsu-white);
+      text-decoration: none;
+      padding: var(--jsu-spacing-sm) var(--jsu-spacing-md);
+      border-radius: var(--jsu-radius-sm);
+      transition: background-color 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .nav-controls a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero */
+    .jsu-hero {
+      background: linear-gradient(135deg, var(--jsu-red) 0%, var(--jsu-red-dark) 100%);
+      color: var(--jsu-white);
+      padding: var(--jsu-spacing-3xl) var(--jsu-spacing-lg);
+      text-align: center;
+      box-shadow: var(--jsu-shadow-lg);
+    }
+
+    .jsu-hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0 0 var(--jsu-spacing-md);
+    }
+
+    .jsu-hero-subtitle {
+      font-size: 1.125rem;
+      margin-bottom: var(--jsu-spacing-sm);
+      opacity: 0.95;
+    }
+
+    .jsu-hero-meta {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-top: var(--jsu-spacing-md);
+    }
+
+    /* Category Grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: var(--jsu-spacing-xl);
+      margin: var(--jsu-spacing-2xl) 0;
+    }
+
+    .category-card {
+      background-color: var(--jsu-white);
+      border: 2px solid var(--jsu-gray-200);
+      border-radius: var(--jsu-radius-lg);
+      padding: var(--jsu-spacing-xl);
+      box-shadow: var(--jsu-shadow-sm);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      border-color: var(--jsu-red);
+      box-shadow: var(--jsu-shadow-red);
+      transform: translateY(-4px);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: var(--jsu-spacing-md);
+      margin-bottom: var(--jsu-spacing-lg);
+      padding-bottom: var(--jsu-spacing-md);
+      border-bottom: 3px solid var(--jsu-red);
+    }
+
+    .category-number {
+      background-color: var(--jsu-red);
+      color: var(--jsu-white);
+      width: 3rem;
+      height: 3rem;
+      line-height: 3rem;
+      text-align: center;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .category-title {
+      color: var(--jsu-red-dark);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .category-topics {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--jsu-spacing-md);
+    }
+
+    .category-topics li {
+      padding: var(--jsu-spacing-sm) 0;
+      color: var(--jsu-gray-700);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: var(--jsu-spacing-lg);
+    }
+
+    .category-topics li:before {
+      content: "▸";
+      color: var(--jsu-red);
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+    }
+
+    .category-quote {
+      background-color: var(--jsu-red-pale);
+      border-left: 4px solid var(--jsu-red);
+      padding: var(--jsu-spacing-md);
+      margin-top: var(--jsu-spacing-md);
+      font-style: italic;
+      color: var(--jsu-gray-700);
+      font-size: 0.9rem;
+      border-radius: var(--jsu-radius-sm);
+    }
+
+    /* Info Box */
+    .info-box {
+      background-color: var(--jsu-white);
+      border: 1px solid var(--jsu-gray-200);
+      border-radius: var(--jsu-radius-lg);
+      padding: var(--jsu-spacing-xl);
+      margin: var(--jsu-spacing-xl) 0;
+      box-shadow: var(--jsu-shadow-sm);
+    }
+
+    .info-box h3 {
+      color: var(--jsu-red);
+      margin-top: 0;
+    }
+
+    .stats {
+      display: flex;
+      gap: var(--jsu-spacing-xl);
+      flex-wrap: wrap;
+      margin: var(--jsu-spacing-lg) 0;
+    }
+
+    .stat {
+      text-align: center;
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--jsu-red);
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--jsu-gray-600);
+      font-size: 0.9rem;
+      margin-top: var(--jsu-spacing-xs);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--jsu-gray-900);
+      color: var(--jsu-white);
+      padding: var(--jsu-spacing-2xl) 0;
+      margin-top: var(--jsu-spacing-3xl);
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--jsu-red-light);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .jsu-hero-title {
+        font-size: 1.75rem;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="jsu-nav">
+    <div class="jsu-container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="#" class="jsu-nav-brand">Transcript Categories</a>
+      <div class="nav-controls">
+        <a href="standalone.html">Full Transcript</a>
+        <a href="../../README.md">Repository</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="jsu-hero">
+    <div class="jsu-container">
+      <h1 class="jsu-hero-title">Guiding Idiots - Topic Categories</h1>
+      <p class="jsu-hero-subtitle">JSU Black Alumni Network Discussion Analysis</p>
+      <div class="jsu-hero-meta">
+        <em>12 organized topic areas from 4,829-word discussion • December 30, 2025</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="jsu-container" style="padding: var(--jsu-spacing-2xl) var(--jsu-spacing-lg);">
+
+    <!-- Overview Stats -->
+    <div class="info-box">
+      <h3>📊 Discussion Overview</h3>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value">12</span>
+          <span class="stat-label">Topic Categories</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">4,829</span>
+          <span class="stat-label">Words Analyzed</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">10</span>
+          <span class="stat-label">Strategic Recommendations</span>
+        </div>
+      </div>
+      <p style="color: var(--jsu-gray-700); margin-top: var(--jsu-spacing-lg);">
+        This discussion covers strategic planning, alumni engagement, scholarship fundraising, organizational development, and tactical implementation strategies for the JSU Black Alumni Network.
+      </p>
+    </div>
+
+    <!-- Category Cards -->
+    <div class="category-grid">
+
+      <!-- Category 1 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">1</span>
+          <h3 class="category-title">Organizational Structure & Governance</h3>
+        </div>
+        <ul class="category-topics">
+          <li>Onboarding & Training Processes</li>
+          <li>Leadership vs. Non-Leadership Roles</li>
+          <li>Organizational History & Legacy (Est. 1996)</li>
+          <li>Parliamentary Procedure Framework</li>
+        </ul>
+        <div class="category-quote">
+          "If we as an organization do not have an intro to organization structure framework... we should create a process or training"
+        </div>
+      </div>
+
+      <!-- Category 2 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">2</span>
+          <h3 class="category-title">Scholarship Fundraising Strategies</h3>
+        </div>
+        <ul class="category-topics">
+          <li>Competitive Fundraising Model</li>
+          <li>Social Capital Building with University</li>
+          <li>Scholarship as Primary Mission</li>
+          <li>City-based Competition Framework</li>
+        </ul>
+        <div class="category-quote">
+          "Whether your event is winning or losing, the scholarship is winning"
+        </div>
+      </div>
+
+      <!-- Category 3 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">3</span>
+          <h3 class="category-title">Geographic Expansion & City Chapters</h3>
+        </div>
+        <ul class="category-topics">
+          <li>National Network Distribution</li>
+          <li>City-based Chapters (Atlanta, Birmingham, New Orleans, DC)</li>
+          <li>Monthly/Quarterly Local Events</li>
+          <li>Geographic Data Utilization</li>
+        </ul>
+        <div class="category-quote">
+          "Establish city chapters... monthly, five months and even quarterly events to keep that engagement going"
+        </div>
+      </div>
+
+      <!-- Category 4 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">4</span>
+          <h3 class="category-title">Marketing & Digital Engagement</h3>
+        </div>
+        <ul class="category-topics">
+          <li>Customer-Centric Marketing</li>
+          <li>Separate Page Strategy (Weekend vs. Network)</li>
+          <li>Social Media Engagement Tactics</li>
+          <li>Content Consistency Challenges</li>
+        </ul>
+        <div class="category-quote">
+          "You don't understand marketing, you're not thinking from the customer perspective"
+        </div>
+      </div>
+
+      <!-- Category 5 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">5</span>
+          <h3 class="category-title">Event Planning & Execution</h3>
+        </div>
+        <ul class="category-topics">
+          <li>Homecoming & Black Alumni Weekend Merger</li>
+          <li>Optics & Marketing Impact</li>
+          <li>Event Proposal Process Requirements</li>
+          <li>University Approval Requirements</li>
+        </ul>
+        <div class="category-quote">
+          "We are not planning the event for us. We're planning for the scholarship"
+        </div>
+      </div>
+
+      <!-- Category 6 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">6</span>
+          <h3 class="category-title">Data & Analytics Strategy</h3>
+        </div>
+        <ul class="category-topics">
+          <li>Current Data Assets (Addresses, Phone Numbers)</li>
+          <li>Missing KPIs (Attendance Tracking, Check-in Systems)</li>
+          <li>Data-Driven Decision Making</li>
+          <li>Geographic Coverage Analysis</li>
+        </ul>
+        <div class="category-quote">
+          "There's a lot of scrappy information that we work with"
+        </div>
+      </div>
+
+      <!-- Category 7 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">7</span>
+          <h3 class="category-title">University Relations & Political Capital</h3>
+        </div>
+        <ul class="category-topics">
+          <li>Building Political Leverage</li>
+          <li>Participation in Official JSU Events</li>
+          <li>First-Name Basis Relationships</li>
+          <li>Communication Challenges with Administration</li>
+        </ul>
+        <div class="category-quote">
+          "It's not always a matter of race. Sometimes it's a matter of money and what it is that you are bringing"
+        </div>
+      </div>
+
+      <!-- Category 8 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">8</span>
+          <h3 class="category-title">Pipeline & Succession Planning</h3>
+        </div>
+        <ul class="category-topics">
+          <li>"Cycle of Service" Concept</li>
+          <li>Future Black Alumni Organization on Campus</li>
+          <li>Student-to-Alumni Bridge</li>
+          <li>Scholarship Incentives for Student Leaders</li>
+        </ul>
+        <div class="category-quote">
+          "I didn't know the black alumni network was a thing until 2021. That is fucking seven years after I graduated"
+        </div>
+      </div>
+
+      <!-- Category 9 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">9</span>
+          <h3 class="category-title">Continuous Engagement Challenges</h3>
+        </div>
+        <ul class="category-topics">
+          <li>Year-Round Engagement Problem</li>
+          <li>Page Inactivity Between Events</li>
+          <li>Low Follower Counts (300 in 2021)</li>
+          <li>Need for Regular Touchpoints</li>
+        </ul>
+        <div class="category-quote">
+          "We struggle with continuous engagement"
+        </div>
+      </div>
+
+      <!-- Category 10 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">10</span>
+          <h3 class="category-title">Communication & Messaging Strategy</h3>
+        </div>
+        <ul class="category-topics">
+          <li>Balance Between Professional and Personable</li>
+          <li>Educational Messaging About University Affiliation</li>
+          <li>Response Strategy for New Ideas</li>
+          <li>Avoiding Gatekeeping Perception</li>
+        </ul>
+        <div class="category-quote">
+          "I don't want you to feel like if you speak to the network that you're going to get brushed off"
+        </div>
+      </div>
+
+      <!-- Category 11 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">11</span>
+          <h3 class="category-title">Organizational Challenges & Pain Points</h3>
+        </div>
+        <ul class="category-topics">
+          <li>Leadership Communication Gaps</li>
+          <li>Member Expectations vs. Reality</li>
+          <li>Historical Knowledge Gaps</li>
+          <li>Lack of Institutional Memory</li>
+        </ul>
+        <div class="category-quote">
+          "People want so much out of our black alumni network and contributed not a fucking dime"
+        </div>
+      </div>
+
+      <!-- Category 12 -->
+      <div class="category-card">
+        <div class="category-header">
+          <span class="category-number">12</span>
+          <h3 class="category-title">Strategic Recommendations</h3>
+        </div>
+        <ul class="category-topics">
+          <li>✅ Combined Homecoming and Black Alumni Weekend</li>
+          <li>Establish City-Based Chapters</li>
+          <li>Create Future Black Alumni Organization</li>
+          <li>Develop Formal Onboarding Processes</li>
+          <li>Implement Data Collection Systems</li>
+        </ul>
+        <div class="category-quote">
+          Implementation roadmap for organizational growth and member engagement
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Usage Notes -->
+    <div class="info-box" style="margin-top: var(--jsu-spacing-3xl);">
+      <h3>📖 How to Use These Categories</h3>
+      <ul style="color: var(--jsu-gray-700);">
+        <li><strong>Pull specific topics</strong> for focused discussions or planning sessions</li>
+        <li><strong>Develop action plans</strong> based on strategic recommendations</li>
+        <li><strong>Create presentations</strong> using relevant categories</li>
+        <li><strong>Onboard new members</strong> with historical context and current challenges</li>
+        <li><strong>Prioritize initiatives</strong> based on pain points and opportunities</li>
+        <li><strong>Reference specific quotes</strong> for proposals or communications</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="jsu-container">
+      <p><strong>Guiding Idiots Repository</strong></p>
+      <p>JSU Black Alumni Network Discussion - Strategic Planning & Alumni Engagement</p>
+      <p style="margin-top: var(--jsu-spacing-lg); font-size: 0.9rem; opacity: 0.7;">
+        Categorization from 4,829-word transcript • Powered by OpenAI Whisper
+      </p>
+      <p style="margin-top: var(--jsu-spacing-sm); font-size: 0.9rem;">
+        📄 <a href="standalone.html">View Full Transcript</a> |
+        📂 <a href="../../TRANSCRIPT_CATEGORIES.md">Markdown Version</a> |
+        📖 <a href="../../README.md">Repository Documentation</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    console.log('Transcript Categories UI loaded');
+    console.log('12 topic categories available');
+  </script>
+</body>
+</html>

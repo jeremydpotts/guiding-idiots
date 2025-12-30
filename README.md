@@ -20,10 +20,18 @@ This repository serves as a historical record of technical problem-solving discu
 
 - [**Audio Transcription UI**](jsu-component-library/examples/standalone.html) - Interactive transcript viewer for "Guiding Idiots" discussion:
   - JSU-themed UI with smooth navigation
-  - Full transcript of JSU Black Alumni Network discussion
-  - Topics: Alumni engagement, scholarship fundraising, organizational structure, event planning
+  - Full transcript of JSU Black Alumni Network discussion (4,829 words)
+  - [**Topic Categories**](jsu-component-library/examples/categories.html) - 12 organized topic areas:
+    - Organizational Structure & Governance
+    - Scholarship Fundraising Strategies
+    - Geographic Expansion & City Chapters
+    - Marketing & Digital Engagement
+    - Event Planning & Execution
+    - Data & Analytics Strategy
+    - And 6 more categories with key quotes and strategic recommendations
   - Transcribed using OpenAI Whisper
   - See [TRANSCRIPTION_GUIDE.md](TRANSCRIPTION_GUIDE.md) for setup instructions
+  - See [TRANSCRIPT_CATEGORIES.md](TRANSCRIPT_CATEGORIES.md) for detailed categorization
 
 ### Transcription Tools
 
@@ -52,8 +60,10 @@ guiding-idiots/
 │   ├── css/                               # Stylesheets (theme + components)
 │   ├── js/                                # Interactive JavaScript
 │   ├── examples/
-│   │   └── standalone.html                # Audio transcript viewer UI
+│   │   ├── standalone.html                # Audio transcript viewer UI
+│   │   └── categories.html                # Topic categories UI
 │   └── assets/                            # Images, logos, fonts
+├── TRANSCRIPT_CATEGORIES.md               # Detailed markdown categorization
 └── [Additional documentation as developed]
 ```
 
@@ -61,4 +71,8 @@ guiding-idiots/
 
 Browse the documentation files to review technical discussions and recommended implementation approaches for various development scenarios.
 
-To view the audio transcript, open [jsu-component-library/examples/standalone.html](jsu-component-library/examples/standalone.html) in your browser.
+### Viewing the JSU Black Alumni Network Discussion
+
+1. **Full Transcript**: Open [jsu-component-library/examples/standalone.html](jsu-component-library/examples/standalone.html) to read the complete 4,829-word discussion
+2. **Topic Categories**: Open [jsu-component-library/examples/categories.html](jsu-component-library/examples/categories.html) to browse 12 organized topic areas with key quotes and recommendations
+3. **Markdown Reference**: See [TRANSCRIPT_CATEGORIES.md](TRANSCRIPT_CATEGORIES.md) for detailed categorization in markdown format
