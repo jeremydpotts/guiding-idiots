@@ -8,11 +8,31 @@ This repository serves as a historical record of technical problem-solving discu
 
 ## Contents
 
-- Discussion histories
-- Potential solutions
-- Technical approaches
-- Lessons learned
+### Current Documentation
+
+- [**LEAPS_QUANT_TOOL_DISCUSSION.md**](LEAPS_QUANT_TOOL_DISCUSSION.md) - Comprehensive discussion recap organized by topics including:
+  - Project status and achievements
+  - Testing & CI/CD implementation strategies
+  - Infrastructure & deployment approaches (PostgreSQL, Docker, config management)
+  - Trading features (live data integration, position monitoring, paper trading)
+  - User experience & polish (UI improvements, documentation, sample strategies)
+  - Decision framework and recommended implementation paths
+
+### Planned Content
+
+- Audio transcription from project discussions (in progress)
+- Additional technical approaches and solutions
+- Lessons learned documentation
+
+## Repository Structure
+
+```
+guiding-idiots/
+├── README.md                        # This file
+├── LEAPS_QUANT_TOOL_DISCUSSION.md  # LEAPS quant tool discussion recap
+└── [Additional documentation as developed]
+```
 
 ## Getting Started
 
-Documentation and solutions will be added as they are developed.
+Browse the documentation files to review technical discussions and recommended implementation approaches for various development scenarios.
